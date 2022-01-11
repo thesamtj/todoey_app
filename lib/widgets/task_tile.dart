@@ -18,9 +18,9 @@ class _TaskTileState extends State<TaskTile> {
       ),
       trailing: TaskCheckbox(
         checkboxState: isChecked,
-        toggleCheckboxState: (bool checkboxState) {
+        toggleCheckboxState: (bool? checkboxState) {
           setState(() {
-            isChecked = checkboxState;
+            isChecked = checkboxState!;
           });
         },
       ),
@@ -30,7 +30,7 @@ class _TaskTileState extends State<TaskTile> {
 
 class TaskCheckbox extends StatelessWidget {
   final bool checkboxState;
-  final Function toggleCheckboxState;
+  final void Function(bool?) toggleCheckboxState;
 
   TaskCheckbox({
     required this.checkboxState,
