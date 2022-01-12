@@ -38,7 +38,8 @@ class AddTaskScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Provider.of<TaskData>(context).addTask(newTaskTitle);
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle);
                 Navigator.pop(context);
               },
               child: Text(
